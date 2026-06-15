@@ -2,8 +2,6 @@
 
 Official PyTorch implementation of **DCMArb: Decoupled-Collaborative Mamba for Arbitrary-Scale Hyperspectral Super-Resolution**.
 
-DCMArb is an arbitrary-scale hyperspectral image super-resolution network. It uses decoupled spatial-spectral Mamba modeling and a scale-aware meta-learned upsampler to reconstruct high-resolution HSI from low-resolution inputs.
-
 ## Main Modules
 
 * **MDES**: Multi-Dimensional Dependency Extraction Stage
