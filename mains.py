@@ -1,7 +1,7 @@
 """Training, testing, and visualization entry point for DCMArb.
 
 Example:
-    python mains.py train --data_root ./datasets/chikusei_x4_256 --gpus 0
+    python mains.py train --data_root ./datasets/chikusei --gpus 0
 """
 import argparse
 import os
@@ -34,7 +34,7 @@ print(PROJECT_DIR)
 DEFAULT_DATA_ROOT = os.path.join(
     os.path.dirname(PROJECT_DIR),
     "datasets",
-    "chikusei_x4_256",
+    "chikusei",
 )
 DEFAULT_VIS_OUTPUT_ROOT = os.path.join(".", "results", "chikusei_vis")
 DEFAULT_CHECKPOINT_DIR = os.path.join(".", "checkpoints", "chikusei_dcmarb_x2-x4")
@@ -52,11 +52,11 @@ def build_common_parser() -> argparse.ArgumentParser:
     parser.add_argument("--batch_size", type=int, default=8, help="Batch size.")
     parser.add_argument("--scale_range", type=float, nargs=2, default=[2, 4], help="Scale range, e.g., --scale_range 2 4.")
 
-    parser.add_argument("--data_root", type=str, default=DEFAULT_DATA_ROOT, help="Dataset root containing train/val/test/vis_512 folders.")
+    parser.add_argument("--data_root", type=str, default=DEFAULT_DATA_ROOT, help="Dataset root containing train/val/test/vis folders.")
     parser.add_argument("--train_dir", type=str, default=None, help="Training data directory. Defaults to <data_root>/train.")
     parser.add_argument("--val_dir", type=str, default=None, help="Validation data directory. Defaults to <data_root>/val.")
     parser.add_argument("--test_dir", type=str, default=None, help="Testing data directory. Defaults to <data_root>/test.")
-    parser.add_argument("--vis_dir", type=str, default=None, help="Visualization data directory. Defaults to <data_root>/vis_512.")
+    parser.add_argument("--vis_dir", type=str, default=None, help="Visualization data directory. Defaults to <data_root>/vis.")
     parser.add_argument("--checkpoint_dir", type=str, default=DEFAULT_CHECKPOINT_DIR, help="Directory for checkpoints/logs.")
     parser.add_argument("--checkpoint", type=str, default=None, help="Checkpoint path for resume/test/vis.")
     parser.add_argument("--resume", action="store_true", help="Resume training from --checkpoint.")
@@ -67,7 +67,7 @@ def resolve_data_dirs(args: argparse.Namespace) -> None:
     args.train_dir = args.train_dir or os.path.join(args.data_root, "train")
     args.val_dir = args.val_dir or os.path.join(args.data_root, "val")
     args.test_dir = args.test_dir or os.path.join(args.data_root, "test")
-    args.vis_dir = args.vis_dir or os.path.join(args.data_root, "vis_512")
+    args.vis_dir = args.vis_dir or os.path.join(args.data_root, "vis")
 
 
 def make_collate_fn(dataset):
