@@ -49,7 +49,7 @@ def build_common_parser() -> argparse.ArgumentParser:
     parser.add_argument("--data_range", type=float, default=1.0, help="Data range used in metric calculation.")
     parser.add_argument("--model_title", type=str, default="dcmarb", help="Model title used in logs/checkpoints.")
     parser.add_argument("--lr_size", type=int, nargs=2, default=(32, 32), help="LR patch size, e.g., --lr_size 32 32.")
-    parser.add_argument("--batch_size", type=int, default=16, help="Batch size.")
+    parser.add_argument("--batch_size", type=int, default=8, help="Batch size.")
     parser.add_argument("--scale_range", type=float, nargs=2, default=[2, 4], help="Scale range, e.g., --scale_range 2 4.")
 
     parser.add_argument("--data_root", type=str, default=DEFAULT_DATA_ROOT, help="Dataset root containing train/val/test/vis_512 folders.")
