@@ -93,6 +93,7 @@ python mains.py vis \
 
 If you find this code useful, please cite our paper:
 
+```bibtex
 @article{wang2026dcmarb,
   title   = {DCMArb: Decoupled-Collaborative Mamba for Arbitrary-scale Hyperspectral Super-resolution},
   author  = {Wang, Shuo and Wang, Mi and Wang, Jiaming and Zhang, Zhenbei},
@@ -103,3 +104,4 @@ If you find this code useful, please cite our paper:
   issn    = {0924-2716},
   doi     = {10.1016/j.isprsjprs.2026.06.009}
 }
+```
