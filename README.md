@@ -91,4 +91,15 @@ python mains.py vis \
 
 ## Citation
 
-The citation information will be updated once the paper is available online.
+If you find this code useful, please cite our paper:
+
+@article{wang2026dcmarb,
+  title   = {DCMArb: Decoupled-Collaborative Mamba for Arbitrary-scale Hyperspectral Super-resolution},
+  author  = {Wang, Shuo and Wang, Mi and Wang, Jiaming and Zhang, Zhenbei},
+  journal = {ISPRS Journal of Photogrammetry and Remote Sensing},
+  volume  = {239},
+  pages   = {399--418},
+  year    = {2026},
+  issn    = {0924-2716},
+  doi     = {10.1016/j.isprsjprs.2026.06.009}
+}
