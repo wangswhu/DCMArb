@@ -47,10 +47,14 @@ class HSArbitraryData(data.Dataset):
         return resize(hr_img, lr_shape[:2], order=3, anti_aliasing=True, preserve_range=True).astype(np.float32)
 
     def _sample_scale(self):
-        scale = random.uniform(*self.scale_range)
         if self.round_scale:
-            return float(round(scale))
+            min_scale = int(round(self.scale_range[0]))
+            max_scale = int(round(self.scale_range[1]))
+            scale_candidates = list(range(min_scale, max_scale + 1))
+            return float(random.choice(scale_candidates))
+        scale = random.uniform(*self.scale_range)
         return float(round(scale, 1))
+    
 
     def __getitem__(self, index):
         if self.current_scale_factor is None:
